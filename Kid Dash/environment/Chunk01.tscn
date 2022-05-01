@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://environment/Trees.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/environment/chunk-01.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://environment/Chunk.gd" type="Script" id=3]
+[ext_resource path="res://assets/materials/lowpoly_material.tres" type="Material" id=4]
+[ext_resource path="res://assets/environment/grass.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://environment/Obstacle.gd" type="Script" id=6]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[node name="Chunk" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+material_override = ExtResource( 4 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="Grass" type="MeshInstance" parent="."]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0 )
+material_override = ExtResource( 4 )
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+
+[node name="Grass2" type="MeshInstance" parent="."]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 0 )
+material_override = ExtResource( 4 )
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+
+[node name="Trees" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
+
+[node name="Trees5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+
+[node name="Trees7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0 )
+
+[node name="Trees8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0 )
+
+[node name="Trees6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 0 )
+
+[node name="Trees3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0 )
+
+[node name="Trees4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 0 )
+
+[node name="Trees2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0 )
+
+[node name="Obstacle" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Obstacle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Obstacle" to="Obstacle" method="_on_Obstacle_body_entered"]

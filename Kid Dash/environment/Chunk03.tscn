@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/environment/chunk-03.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://environment/Chunk01.tscn" type="PackedScene" id=2]
+
+[node name="Chunk" instance=ExtResource( 2 )]
+
+[node name="Mesh" parent="." index="0"]
+mesh = ExtResource( 1 )
+material/4 = null
+
+[node name="Obstacle" parent="." index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

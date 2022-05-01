@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/environment/tree.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/materials/lowpoly_material.tres" type="Material" id=2]
+
+[node name="Tree" type="Spatial"]
+
+[node name="tree" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )

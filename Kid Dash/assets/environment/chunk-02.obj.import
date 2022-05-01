@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chunk-02.obj-5fb05c2ed3d23447d9afa1456c2d7260.mesh"
+
+[deps]
+
+files=[ "res://.import/chunk-02.obj-5fb05c2ed3d23447d9afa1456c2d7260.mesh" ]
+
+source_file="res://assets/environment/chunk-02.obj"
+dest_files=[ "res://.import/chunk-02.obj-5fb05c2ed3d23447d9afa1456c2d7260.mesh", "res://.import/chunk-02.obj-5fb05c2ed3d23447d9afa1456c2d7260.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
