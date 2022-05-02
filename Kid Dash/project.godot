@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="KidDash"
-run/main_scene="res://environment/World.tscn"
+run/main_scene="res://UI/StartGame.tscn"
 config/icon="res://icon.png"
 
 [input]
