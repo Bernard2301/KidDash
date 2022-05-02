@@ -6,7 +6,7 @@ onready var collision_animation = $AnimationPlayer
 
 var lane = 0
 
-func _physics_process(delta):
+func _physics_process(delta): #handles user input and player movement
 	if Input.is_action_just_pressed("jump"):
 		animation_tree.set("parameters/play_jump/active", true)
 		collision_animation.play("jump")
